@@ -124,37 +124,60 @@
             $(document).ready(function() {
            // Formulario 1: Configura tu sable de luz
                 // Seleccionar todos los elementos de entrada
-                console.log($("input"));
+                console.log($(":input").text());
                 
                 // Seleccionar el color del sable (input type="text")
-           
+                $("#saber-color").on('input', function(){
+                    console.log("Color seleccionado: ", $(this).val())
+                })
+               
                 // Seleccionar el archivo de imagen (input type="file")
-
+                $("#saber-image").on('input', function(){
+                    console.log("Color seleccionado: ", $(this).val())
+                })
 
                 // Botón de submit
- 
+                $("#lightsaber-form input[type='submit']").click(function(){
+                    console.log("Sable guardado")
+                });
 
                 // Botón de reset
-  
+                $("#lightsaber-form input[type='reset']").click(function(){
+                    console.log("Borrado")
+                });
 
             // Formulario 2: Elegir tu rol en la misión
                 // Seleccionar radio buttons (afiliación a la Fuerza)
-
+                $("#mission-role-form [type=radio]").on('change', function(){
+                    console.log("Afiliacion a la fuerza: ", $(this).val())
+                })
+              
 
                 // Seleccionar checkbox (roles de la misión)
-
+                $("#mission-role-form [type=checkbox]").on('change', function(){
+                    console.log("Roles de la mision: ", $(this).val())
+                })
 
                 // Botón para asignar rol
-
+                $("#lightsaber-form input[type='submit']").click(function(){
+                    console.log("Se han asignado los roles")
+                });
 
             // Formulario 3: Informe de estado
                 // Seleccionar textarea (contenido del informe)
-       
+                $("#report-content").on('input', function(){
+                    console.log("Roles de la mision: ", $(this).val())
+                })
 
                 // Seleccionar checkbox de entrenamiento completado
- 
+                $("#status-report-form [type=checkbox]").on('change', function(){
+                    console.log("Rol completado: ", $(this).val())
+                })
 
                 // Botón de submit del informe
+                $("#status-report-form input[type='submit']").click(function(){
+                    console.log("Informe enviado")
+                });
    
             });
       </script>
